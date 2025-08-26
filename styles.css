@@ -1,0 +1,148 @@
+/* styles.css - Shared styles for portfolio website */
+:root {
+  --navy: #0f172a;
+  --teal: #06b6d4;
+  --gray: #f3f4f6;
+  --white: #ffffff;
+  --sidebar-width: 220px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--gray);
+  color: var(--navy);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--navy);
+  color: var(--white);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header__site {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.header__name {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.sidebar {
+  background: var(--white);
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  border-right: 1px solid var(--gray);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sidebar a {
+  color: var(--navy);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s, border-radius 0.2s;
+  font-size: 1rem;
+}
+.sidebar a:hover,
+.sidebar a:focus {
+  background: var(--teal);
+  color: var(--white);
+  border-radius: 12px;
+  outline: none;
+}
+
+.main {
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  min-height: calc(100vh - 128px);
+  background: var(--gray);
+}
+
+.footer {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2rem;
+}
+.footer__links {
+  margin-top: 0.5rem;
+}
+.footer__links a {
+  color: var(--teal);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.footer__links a:focus {
+  outline: 2px solid var(--teal);
+  border-radius: 4px;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 160px;
+    min-width: 120px;
+  }
+  .main {
+    margin-left: 160px;
+    padding: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    min-height: auto;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--gray);
+    padding: 0.5rem 0;
+  }
+  .sidebar nav {
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .header__site {
+    font-size: 1.1rem;
+  }
+  .main {
+    padding: 0.5rem;
+  }
+  .footer {
+    font-size: 0.9rem;
+  }
+}
