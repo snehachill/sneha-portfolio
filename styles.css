@@ -12,6 +12,9 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: var(--gray);
   color: var(--navy);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -70,7 +73,7 @@ body {
 .main {
   margin-left: var(--sidebar-width);
   padding: 2rem;
-  min-height: calc(100vh - 128px);
+  flex: 1;
   background: var(--gray);
 }
 
@@ -79,8 +82,6 @@ body {
   color: var(--white);
   text-align: center;
   padding: 1rem 0;
-  position: relative;
-  bottom: 0;
   width: 100%;
   margin-top: 2rem;
 }
@@ -110,6 +111,9 @@ body {
   }
 }
 @media (max-width: 700px) {
+  body {
+    flex-direction: column;
+  }
   .header {
     flex-direction: column;
     align-items: flex-start;
