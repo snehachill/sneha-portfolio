@@ -82,8 +82,11 @@ body {
   color: var(--white);
   text-align: center;
   padding: 1rem 0;
-  width: 100%;
+  width: 100vw;
   margin-top: 2rem;
+  position: relative;
+  left: 0;
+  right: 0;
 }
 .footer__links {
   margin-top: 0.5rem;
@@ -99,7 +102,6 @@ body {
   border-radius: 4px;
 }
 
-/* Responsive styles */
 @media (max-width: 900px) {
   .sidebar {
     width: 160px;
